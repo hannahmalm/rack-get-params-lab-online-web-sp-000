@@ -21,9 +21,6 @@ class Application
     elsif req.path.match(/add/)
     #search_term represents item that im trying to add to cart 
        search_term = req.params["item"]
-       #iterate over list of items to see if search term is in there 
-       #if search term is there then write added _ 
-       #if search term is not in item list then write ___ 
        if @@items.include?(search_term)
           resp.write "added #{search_term}"
           @@cart << search_term
